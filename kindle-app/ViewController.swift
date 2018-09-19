@@ -31,11 +31,17 @@ class Page{
 }
 
 class ViewController: UIViewController {
-
+    
+    var books: [Book]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        self.setupBooks()
+    }
+    
+    func setupBooks(){
         let page1 = Page(number: 1, text: "Text for the first page")
         let page2 = Page(number: 2, text: "Text for the second page")
         
@@ -46,6 +52,19 @@ class ViewController: UIViewController {
             Page(number: 3, text: "This is the third page"),
             Page(number: 4, text: "This is the fourth page")
             ])
+        //self.books = [book1, book2]
+        
+        // Safely unwrapping an optional
+        //        if let unwrappedBooks = self.books{
+        //            for book in unwrappedBooks{
+        //                print(book)
+        //            }
+        //        }
+        
+        guard let books = self.books else {return}
+        for book in books{
+            print(book)
+        }
     }
 
     override func didReceiveMemoryWarning() {
