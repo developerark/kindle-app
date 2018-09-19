@@ -11,9 +11,12 @@ import UIKit
 class Book{
     let title: String
     let author: String
-    init(title: String, author: String){
+    let pages: [Page]
+    
+    init(title: String, author: String, pages: [Page]){
         self.title = title
         self.author = author
+        self.pages = pages
     }
 }
 
@@ -33,10 +36,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.view.backgroundColor = .red
+        let page1 = Page(number: 1, text: "Text for the first page")
+        let page2 = Page(number: 2, text: "Text for the second page")
         
-        let book = Book(title: "Steve Jobs", author: "Walter Issacson")
-        print("Title: \(book.title), Author: \(book.author)")
+        let book1 = Book(title: "Steve Jobs", author: "Walter Issacson", pages: [page1, page2])
+        let book2 = Book(title: "Bill Gates: A Biography", author: "Michael Becraft", pages: [
+            Page(number: 1, text: "This is the first page"),
+            Page(number: 2, text: "This is the second page"),
+            Page(number: 3, text: "This is the third page"),
+            Page(number: 4, text: "This is the fourth page")
+            ])
     }
 
     override func didReceiveMemoryWarning() {
