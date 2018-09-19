@@ -17,8 +17,35 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellID")
+        
+        // Remove cell lines
+        tableView.tableFooterView =
+            UIView()
         self.navigationItem.title = "Kindle"
         self.setupBooks()
+    }
+    
+    // Setting the height for tableview cell
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
+    // Number of cells in the tableview
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let count = self.books?.count else {return 0}
+        return count
+    }
+    
+    // Generate each cell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID", for: indexPath)
+        cell.backgroundColor = .green
+        let book = self.books?[indexPath.row]
+        cell.textLabel?.text = book?.title
+        
+        return cell
     }
     
     func setupBooks(){
@@ -32,19 +59,7 @@ class ViewController: UITableViewController {
             Page(number: 3, text: "This is the third page"),
             Page(number: 4, text: "This is the fourth page")
             ])
-        //self.books = [book1, book2]
-        
-        // Safely unwrapping an optional
-        //        if let unwrappedBooks = self.books{
-        //            for book in unwrappedBooks{
-        //                print(book)
-        //            }
-        //        }
-        
-        guard let books = self.books else {return}
-        for book in books{
-            print(book)
-        }
+        self.books = [book1, book2]
     }
 
     override func didReceiveMemoryWarning() {
