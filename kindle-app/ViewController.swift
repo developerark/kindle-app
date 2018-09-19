@@ -8,11 +8,35 @@
 
 import UIKit
 
+class Book{
+    let title: String
+    let author: String
+    init(title: String, author: String){
+        self.title = title
+        self.author = author
+    }
+}
+
+class Page{
+    let number: Int
+    let text: String
+    
+    init(number: Int, text: String){
+        self.number = number
+        self.text = text
+    }
+}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.view.backgroundColor = .red
+        
+        let book = Book(title: "Steve Jobs", author: "Walter Issacson")
+        print("Title: \(book.title), Author: \(book.author)")
     }
 
     override func didReceiveMemoryWarning() {
