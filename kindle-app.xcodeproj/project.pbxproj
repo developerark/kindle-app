@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		0A06B7022153082B0060C43E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A06B7012153082B0060C43E /* AppDelegate.swift */; };
 		0A06B7042153082B0060C43E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A06B7032153082B0060C43E /* ViewController.swift */; };
-		0A06B7072153082B0060C43E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A06B7052153082B0060C43E /* Main.storyboard */; };
 		0A06B7092153082D0060C43E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A06B7082153082D0060C43E /* Assets.xcassets */; };
 		0A06B70C2153082D0060C43E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A06B70A2153082D0060C43E /* LaunchScreen.storyboard */; };
 		0A06B7172153082D0060C43E /* kindle_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A06B7162153082D0060C43E /* kindle_appTests.swift */; };
 		0A06B7222153082D0060C43E /* kindle_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A06B7212153082D0060C43E /* kindle_appUITests.swift */; };
+		0A188FA9215314F700084A51 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A188FA8215314F700084A51 /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,6 @@
 		0A06B6FE2153082B0060C43E /* kindle-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kindle-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A06B7012153082B0060C43E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A06B7032153082B0060C43E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0A06B7062153082B0060C43E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A06B7082153082D0060C43E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A06B70B2153082D0060C43E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A06B70D2153082D0060C43E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		0A06B71D2153082D0060C43E /* kindle-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "kindle-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A06B7212153082D0060C43E /* kindle_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kindle_appUITests.swift; sourceTree = "<group>"; };
 		0A06B7232153082D0060C43E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A188FA8215314F700084A51 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +99,7 @@
 			children = (
 				0A06B7012153082B0060C43E /* AppDelegate.swift */,
 				0A06B7032153082B0060C43E /* ViewController.swift */,
-				0A06B7052153082B0060C43E /* Main.storyboard */,
+				0A188FA8215314F700084A51 /* Models.swift */,
 				0A06B7082153082D0060C43E /* Assets.xcassets */,
 				0A06B70A2153082D0060C43E /* LaunchScreen.storyboard */,
 				0A06B70D2153082D0060C43E /* Info.plist */,
@@ -231,7 +231,6 @@
 			files = (
 				0A06B70C2153082D0060C43E /* LaunchScreen.storyboard in Resources */,
 				0A06B7092153082D0060C43E /* Assets.xcassets in Resources */,
-				0A06B7072153082B0060C43E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A188FA9215314F700084A51 /* Models.swift in Sources */,
 				0A06B7042153082B0060C43E /* ViewController.swift in Sources */,
 				0A06B7022153082B0060C43E /* AppDelegate.swift in Sources */,
 			);
@@ -293,14 +293,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0A06B7052153082B0060C43E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0A06B7062153082B0060C43E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0A06B70A2153082D0060C43E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
