@@ -25,6 +25,19 @@ class ViewController: UITableViewController {
             UIView()
         self.navigationItem.title = "Kindle"
         self.setupBooks()
+        self.fetchBooks()
+    }
+    
+    func fetchBooks(){
+        guard let url = URL(string: "https://letsbuildthatapp-videos.s3-us-west-2.amazonaws.com/kindle.json") else {return}
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                print(error)
+            }
+            guard let data = data else {return}
+            guard let dataStr = String(data: data, encoding: .utf8) else {return}
+            print(dataStr)
+        }.resume()
     }
     
     // Cell tap handler
