@@ -6,16 +6,19 @@
 //  Copyright © 2018 Aswin Raj Kharel. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
 class Book{
     let title: String
     let author: String
     let pages: [Page]
+    let image: UIImage
     
-    init(title: String, author: String, pages: [Page]){
+    init(title: String, author: String, image: UIImage, pages: [Page]){
         self.title = title
         self.author = author
         self.pages = pages
+        self.image = image
     }
 }
 

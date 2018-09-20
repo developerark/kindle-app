@@ -18,7 +18,7 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellID")
+        tableView.register(BookCell.self, forCellReuseIdentifier: "cellID")
         
         // Remove cell lines
         tableView.tableFooterView =
@@ -41,9 +41,9 @@ class ViewController: UITableViewController {
     // Generate each cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellID", for: indexPath)
-        cell.backgroundColor = .green
         let book = self.books?[indexPath.row]
         cell.textLabel?.text = book?.title
+        cell.imageView?.image = book?.image
         
         return cell
     }
@@ -52,8 +52,8 @@ class ViewController: UITableViewController {
         let page1 = Page(number: 1, text: "Text for the first page")
         let page2 = Page(number: 2, text: "Text for the second page")
         
-        let book1 = Book(title: "Steve Jobs", author: "Walter Issacson", pages: [page1, page2])
-        let book2 = Book(title: "Bill Gates: A Biography", author: "Michael Becraft", pages: [
+        let book1 = Book(title: "Steve Jobs", author: "Walter Issacson", image: UIImage(named: "stevejobs")!, pages: [page1, page2])
+        let book2 = Book(title: "Bill Gates: A Biography", author: "Michael Becraft", image: UIImage(named: "billgates")!, pages: [
             Page(number: 1, text: "This is the first page"),
             Page(number: 2, text: "This is the second page"),
             Page(number: 3, text: "This is the third page"),
