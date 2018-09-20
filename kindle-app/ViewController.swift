@@ -40,11 +40,10 @@ class ViewController: UITableViewController {
     
     // Generate each cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID", for: indexPath)
+        // Downcasting
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID", for: indexPath) as! BookCell
         let book = self.books?[indexPath.row]
-//        cell.textLabel?.text = book?.title
-//        cell.imageView?.image = book?.image
-        
+        cell.book = book
         return cell
     }
     

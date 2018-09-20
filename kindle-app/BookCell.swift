@@ -9,26 +9,29 @@
 import UIKit
 
 class BookCell: UITableViewCell{
-    let coverImageView: UIImageView = {
+    var book: Book?{
+        didSet{
+            self.coverImageView.image = book?.image
+            self.titleLabel.text = book?.title
+            self.authorLabel.text = book?.author
+        }
+    }
+
+    private let coverImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .red
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
-    let titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "This is a text for the label"
-        label.backgroundColor = .blue
         return label
     }()
     
-    let authorLabel: UILabel = {
+    private let authorLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "This is the author label"
-        label.backgroundColor = .green
         return label
     }()
     
