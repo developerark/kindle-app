@@ -24,7 +24,6 @@ class ViewController: UITableViewController {
         tableView.tableFooterView =
             UIView()
         self.navigationItem.title = "Kindle"
-        self.setupBooks()
         self.fetchBooks()
     }
     
@@ -35,8 +34,26 @@ class ViewController: UITableViewController {
                 print(error)
             }
             guard let data = data else {return}
-            guard let dataStr = String(data: data, encoding: .utf8) else {return}
-            print(dataStr)
+            //guard let dataStr = String(data: data, encoding: .utf8) else {return}
+            
+            do{
+                let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+                // Declare an array of dictionary
+                guard let bookDictionaries = json as? [[String: Any]] else {return}
+                self.books = []
+                for bookDictionary in bookDictionaries{
+                    guard let title = bookDictionary["title"] as? String else {return}
+                    guard let author = bookDictionary["author"] as? String else {return}
+                    let book = Book(title: title as! String, author: author, image: #imageLiteral(resourceName: "stevejobs"), pages: [])
+                    self.books?.append(book)
+                    
+                    // Call the UI code in the main thread
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }                }
+            }catch let jsonError{
+                print("Failed to parse JSON properly: ", jsonError)
+            }
         }.resume()
     }
     
