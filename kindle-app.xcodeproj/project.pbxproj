@@ -16,6 +16,7 @@
 		0A188FA9215314F700084A51 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A188FA8215314F700084A51 /* Models.swift */; };
 		0A188FAF21531BB500084A51 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A188FAE21531BB500084A51 /* BookCell.swift */; };
 		0A925EEE2154529A00C782C2 /* BookPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A925EED2154529A00C782C2 /* BookPageController.swift */; };
+		0A925EF0215457DA00C782C2 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A925EEF215457DA00C782C2 /* PageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		0A188FA8215314F700084A51 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		0A188FAE21531BB500084A51 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		0A925EED2154529A00C782C2 /* BookPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPageController.swift; sourceTree = "<group>"; };
+		0A925EEF215457DA00C782C2 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				0A925EED2154529A00C782C2 /* BookPageController.swift */,
+				0A925EEF215457DA00C782C2 /* PageCell.swift */,
 				0A06B7002153082B0060C43E /* kindle-app */,
 				0A06B7152153082D0060C43E /* kindle-appTests */,
 				0A06B7202153082D0060C43E /* kindle-appUITests */,
@@ -263,6 +266,7 @@
 			files = (
 				0A188FAF21531BB500084A51 /* BookCell.swift in Sources */,
 				0A188FA9215314F700084A51 /* Models.swift in Sources */,
+				0A925EF0215457DA00C782C2 /* PageCell.swift in Sources */,
 				0A06B7042153082B0060C43E /* ViewController.swift in Sources */,
 				0A925EEE2154529A00C782C2 /* BookPageController.swift in Sources */,
 				0A06B7022153082B0060C43E /* AppDelegate.swift in Sources */,

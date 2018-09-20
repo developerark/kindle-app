@@ -13,7 +13,7 @@ class BookPageController: UICollectionViewController, UICollectionViewDelegateFl
         super.viewDidLoad()
         self.collectionView?.backgroundColor = .white
         self.navigationItem.title = "Book"
-        self.collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellID")
+        self.collectionView?.register(PageCell.self, forCellWithReuseIdentifier: "cellID")
         
         // Collectionview layout
         let layout = self.collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
@@ -33,11 +33,11 @@ class BookPageController: UICollectionViewController, UICollectionViewDelegateFl
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath)
-        if indexPath.item % 2 == 0 {
-            cell.backgroundColor = .blue
-        }else{
-            cell.backgroundColor = .red
-        }
+//        if indexPath.item % 2 == 0 {
+//            cell.backgroundColor = .blue
+//        }else{
+//            cell.backgroundColor = .red
+//        }
             return cell
     }
 }
