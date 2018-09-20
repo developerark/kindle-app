@@ -83,8 +83,6 @@
 		0A06B6F52153082B0060C43E = {
 			isa = PBXGroup;
 			children = (
-				0A925EED2154529A00C782C2 /* BookPageController.swift */,
-				0A925EEF215457DA00C782C2 /* PageCell.swift */,
 				0A06B7002153082B0060C43E /* kindle-app */,
 				0A06B7152153082D0060C43E /* kindle-appTests */,
 				0A06B7202153082D0060C43E /* kindle-appUITests */,
@@ -107,7 +105,9 @@
 			children = (
 				0A06B7012153082B0060C43E /* AppDelegate.swift */,
 				0A06B7032153082B0060C43E /* ViewController.swift */,
+				0A925EED2154529A00C782C2 /* BookPageController.swift */,
 				0A188FA8215314F700084A51 /* Models.swift */,
+				0A925EEF215457DA00C782C2 /* PageCell.swift */,
 				0A188FAE21531BB500084A51 /* BookCell.swift */,
 				0A06B7082153082D0060C43E /* Assets.xcassets */,
 				0A06B70A2153082D0060C43E /* LaunchScreen.storyboard */,

@@ -14,12 +14,12 @@ class PageCell: UICollectionViewCell{
         label.text = "SAMPLE TEXT FOR LABELSAMPLE TEXT FOR LABELSAMPLE TEXT FOR LABELSAMPLE TEXT FOR LABELSAMPLE TEXT FOR LABELSAMPLE TEXT FOR LABELSAMPLE TEXT FOR LABELSAMPLE TEXT FOR LABEL"
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .green
+        //label.backgroundColor = .green
         return label
     }()
     override init(frame: CGRect){
         super.init(frame: frame)
-        self.backgroundColor = .yellow
+        //self.backgroundColor = .yellow
         
         addSubview(self.textLabel)
         self.textLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true

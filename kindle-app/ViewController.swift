@@ -32,6 +32,8 @@ class ViewController: UITableViewController {
         let layout = UICollectionViewFlowLayout()
         let bookPageController = BookPageController(collectionViewLayout: layout)
         let navController = UINavigationController(rootViewController: bookPageController)
+        let selectedBook = self.books![indexPath.row]
+        bookPageController.book = selectedBook
         self.present(navController, animated: true, completion: nil)
     }
     
