@@ -27,6 +27,14 @@ class ViewController: UITableViewController {
         self.setupBooks()
     }
     
+    // Cell tap handler
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let layout = UICollectionViewFlowLayout()
+        let bookPageController = BookPageController(collectionViewLayout: layout)
+        let navController = UINavigationController(rootViewController: bookPageController)
+        self.present(navController, animated: true, completion: nil)
+    }
+    
     // Setting the height for tableview cell
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
