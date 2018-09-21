@@ -88,19 +88,19 @@ class ViewController: UITableViewController {
         return cell
     }
     
-    func setupBooks(){
-        let page1 = Page(number: 1, text: "Text for the first page")
-        let page2 = Page(number: 2, text: "Text for the second page")
-        
-        let book1 = Book(title: "Steve Jobs", author: "Walter Issacson", image: UIImage(named: "stevejobs")!, pages: [page1, page2])
-        let book2 = Book(title: "Bill Gates: A Biography", author: "Michael Becraft", image: UIImage(named: "billgates")!, pages: [
-            Page(number: 1, text: "This is the first page"),
-            Page(number: 2, text: "This is the second page"),
-            Page(number: 3, text: "This is the third page"),
-            Page(number: 4, text: "This is the fourth page")
-            ])
-        self.books = [book1, book2]
-    }
+//    func setupBooks(){
+//        let page1 = Page(number: 1, text: "Text for the first page")
+//        let page2 = Page(number: 2, text: "Text for the second page")
+//        
+//        let book1 = Book(title: "Steve Jobs", author: "Walter Issacson", image: UIImage(named: "stevejobs")!, pages: [page1, page2])
+//        let book2 = Book(title: "Bill Gates: A Biography", author: "Michael Becraft", image: UIImage(named: "billgates")!, pages: [
+//            Page(number: 1, text: "This is the first page"),
+//            Page(number: 2, text: "This is the second page"),
+//            Page(number: 3, text: "This is the third page"),
+//            Page(number: 4, text: "This is the fourth page")
+//            ])
+//        self.books = [book1, book2]
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

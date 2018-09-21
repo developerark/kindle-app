@@ -11,9 +11,22 @@ import UIKit
 class BookCell: UITableViewCell{
     var book: Book?{
         didSet{
-            self.coverImageView.image = book?.image
             self.titleLabel.text = book?.title
             self.authorLabel.text = book?.author
+            guard let coverImageURL = book?.coverImageURL else {return}
+            guard let url = URL(string: coverImageURL) else {return}
+            self.coverImageView.image = nil
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+                if let error = error{
+                    print(error)
+                    return
+                }
+                guard let data = data else {return}
+                let image = UIImage(data: data)
+                DispatchQueue.main.async {
+                    self.coverImageView.image = image
+                }
+            }.resume()
         }
     }
 
@@ -38,7 +51,6 @@ class BookCell: UITableViewCell{
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        print("Cell is being Initialized")
         
         // Adding coverImageView and constraints
         self.addSubview(self.coverImageView)
