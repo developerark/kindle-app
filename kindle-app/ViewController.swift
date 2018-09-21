@@ -17,6 +17,8 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        setupNavigationBarStyles()
+        setupNavBarButtons()
         
         tableView.register(BookCell.self, forCellReuseIdentifier: "cellID")
         
@@ -91,7 +93,7 @@ class ViewController: UITableViewController {
 //    func setupBooks(){
 //        let page1 = Page(number: 1, text: "Text for the first page")
 //        let page2 = Page(number: 2, text: "Text for the second page")
-//        
+//
 //        let book1 = Book(title: "Steve Jobs", author: "Walter Issacson", image: UIImage(named: "stevejobs")!, pages: [page1, page2])
 //        let book2 = Book(title: "Bill Gates: A Biography", author: "Michael Becraft", image: UIImage(named: "billgates")!, pages: [
 //            Page(number: 1, text: "This is the first page"),
@@ -106,7 +108,28 @@ class ViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    func setupNavBarButtons(){
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "menuicon")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleMenuPress))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "amazonicon")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleLogoPress))
+        
+    }
+    
+    @objc func handleLogoPress(){
+        print("Logo Pressed")
+    }
+    
+    
+    @objc func handleMenuPress(){
+        print("Menu Pressed")
+    }
+    
+    func setupNavigationBarStyles(){
+        // Setting background color
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 40/255, green: 40/255, blue: 40/255, alpha: 1)
+        self.navigationController?.navigationBar.isTranslucent = false
+        let textAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = textAttributes
+    }
 
 }
 
