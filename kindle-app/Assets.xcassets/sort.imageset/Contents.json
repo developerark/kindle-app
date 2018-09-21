@@ -6,11 +6,11 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "menuicon.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "sort@3x.png",
       "scale" : "3x"
     }
   ],

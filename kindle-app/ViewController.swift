@@ -23,8 +23,10 @@ class ViewController: UITableViewController {
         tableView.register(BookCell.self, forCellReuseIdentifier: "cellID")
         
         // Remove cell lines
-        tableView.tableFooterView =
-            UIView()
+        tableView.tableFooterView = UIView()
+        
+        // Set the table view background color not the cells
+        self.tableView.backgroundColor = .lightGray
         self.navigationItem.title = "Kindle"
         self.fetchBooks()
     }
@@ -59,6 +61,54 @@ class ViewController: UITableViewController {
             }
         }.resume()
     }
+    // Configuring the footer view
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView = UIView()
+        footerView.backgroundColor = UIColor(red: 40/255, green: 40/255, blue: 40/255, alpha: 1)
+        
+        // Create segmented control
+        let segmentedControl = UISegmentedControl(items: ["Cloud", "Device"])
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        segmentedControl.tintColor = .white
+        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.addTarget(self, action: #selector(handleSegmentController(sender:)), for: UIControlEvents.valueChanged)
+        footerView.addSubview(segmentedControl)
+        segmentedControl.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        segmentedControl.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        segmentedControl.centerXAnchor.constraint(equalTo: footerView.centerXAnchor, constant: 0).isActive = true
+        segmentedControl.centerYAnchor.constraint(equalTo: footerView.centerYAnchor, constant: 0).isActive = true
+
+        let gridButton = UIButton(type: .system)
+        gridButton.setImage(UIImage(named:"grid"), for: .normal)
+        gridButton.translatesAutoresizingMaskIntoConstraints = false
+        gridButton.tintColor = .white
+        gridButton.addTarget(self, action: #selector(gridButtonPressed(sender:)), for: .touchUpInside)
+        footerView.addSubview(gridButton)
+        gridButton.leftAnchor.constraint(equalTo: footerView.leftAnchor, constant: 16).isActive = true
+        gridButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        gridButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        gridButton.centerYAnchor.constraint(equalTo: footerView.centerYAnchor, constant: 0).isActive = true
+        
+        let sortButton = UIButton(type: .system)
+        sortButton.setImage(UIImage(named:"sort"), for: .normal)
+        sortButton.translatesAutoresizingMaskIntoConstraints = false
+        sortButton.tintColor = .white
+        sortButton.addTarget(self, action: #selector(sortButtonPressed(sender:)), for: .touchUpInside)
+        footerView.addSubview(sortButton)
+        sortButton.rightAnchor.constraint(equalTo: footerView.rightAnchor, constant: -16).isActive = true
+        sortButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        sortButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        sortButton.centerYAnchor.constraint(equalTo: footerView.centerYAnchor, constant: 0).isActive = true
+        return footerView
+    }
+    
+    @objc func handleSegmentController(sender: UISegmentedControl){
+        print(sender.selectedSegmentIndex)
+    }
+    
+    @objc func gridButtonPressed(sender: UIButton){}
+    
+    @objc func sortButtonPressed(sender: UIButton){}
     
     // Cell tap handler
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -68,6 +118,10 @@ class ViewController: UITableViewController {
         let selectedBook = self.books![indexPath.row]
         bookPageController.book = selectedBook
         self.present(navController, animated: true, completion: nil)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 50
     }
     
     // Setting the height for tableview cell

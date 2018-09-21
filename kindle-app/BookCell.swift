@@ -51,7 +51,8 @@ class BookCell: UITableViewCell{
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+        // Set the cell color
+        //self.backgroundColor = .clear
         // Adding coverImageView and constraints
         self.addSubview(self.coverImageView)
         self.coverImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 8).isActive = true
