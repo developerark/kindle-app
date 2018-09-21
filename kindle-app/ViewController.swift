@@ -42,9 +42,10 @@ class ViewController: UITableViewController {
                 guard let bookDictionaries = json as? [[String: Any]] else {return}
                 self.books = []
                 for bookDictionary in bookDictionaries{
-                    guard let title = bookDictionary["title"] as? String else {return}
-                    guard let author = bookDictionary["author"] as? String else {return}
-                    let book = Book(title: title as! String, author: author, image: #imageLiteral(resourceName: "stevejobs"), pages: [])
+//                    guard let title = bookDictionary["title"] as? String else {return}
+//                    guard let author = bookDictionary["author"] as? String else {return}
+//                    let book = Book(title: title as! String, author: author, image: #imageLiteral(resourceName: "stevejobs"), pages: [])
+                    let book = Book(dictionary: bookDictionary)
                     self.books?.append(book)
                     
                     // Call the UI code in the main thread
